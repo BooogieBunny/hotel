@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="booking">
+  <div class="banner">
+    <div class="navbar">
+      <img id="logo" src="images/logo.png" alt="logo">
+      <a class="burger-nav">Menu</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+        <div class="title">
+            <h2>Reservation</h2>
+        </div>
+            <div class="booking-form">
+                <form action="reservation.php" method="post">
+                    <div class="elem-group">
+                      <label for="name">Your Name</label>
+                      <input type="text" id="name" name="visitor_name" placeholder="John Brown" pattern=[A-Z\sa-z]{3,20} required>
+                    </div>
+                    <div class="elem-group">
+                      <label for="email">Your E-Mail</label>
+                      <input type="email" id="email" name="visitor_email" placeholder="Johnbrown@gmail.com" required>
+                    </div>
+                    <div class="elem-group">
+                      <label for="phone">Your Phone</label>
+                      <!--Phone Input is without pattern-->
+                      <input type="tel" id="phone" name="visitor_phone" placeholder="(+995) 599-26-12-14" 
+                       required>
+                    </div>
+                    <hr>
+                    <div class="elem-group inlined">
+                      <label for="adult">Adults</label>
+                      <input type="number" id="adult" name="total_adults" placeholder="1" min="1" required>
+                    </div>
+                    <div class="elem-group inlined">
+                      <label for="child">Children</label>
+                      <input type="number" id="child" name="total_children" placeholder="1" min="0" required>
+                    </div>
+                    <div class="elem-group inlined">
+                      <label for="checkin-date">Check-in Date</label>
+                      <input type="date" id="checkin-date" name="checkin" required>
+                    </div>
+                    <div class="elem-group inlined">
+                      <label for="checkout-date">Check-out Date</label>
+                      <input type="date" id="checkout-date" name="checkout" required>
+                    </div>
+                    <div class="elem-group">
+                      <label for="room-selection">Select Room Preference</label>
+                      <select id="room-selection" name="room_preference" required>
+                          <option value="">Choose a Room from the List</option>
+                          <option value="connecting">Single Room</option>
+                          <option value="adjoining">Double Room</option>
+                          <option value="adjacent">Triple Room</option>
+                      </select>
+                    </div>
+                    <hr>
+                    <div class="elem-group">
+                      <label for="message">Anything Else?</label>
+                      <textarea id="message" name="visitor_message" placeholder="Tell us anything else that might be important." required></textarea>
+                    </div>
+                    <button id="submit" type="submit">Book The Rooms</button>
+                  </form>
+        </div>
+    
+</body>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="menu.js"></script>
+</html>
